@@ -18,8 +18,25 @@ Regardless of whether a language is elegant or not, a language's success depends
 My Arabic isn't that great, I'm will look for someone to help me in the translation of the README once I have a working implementation done.
 
 ## Implementation
-Not Yet Written
+All Arabic letters are encoded to English, while C++ allows for Arabic characters to be used in identifiers, forcing all characters to English will allow for less ambiguity, and allow for robustness.
 
+## Valid Keywords
+| C++11 Keyword  | س++ Equivalent(s) |
+| ------------- | ------------- |
+| alignas  | حاذى_ك  |
+| alignof  | محاذ  |
+| and  | و  |
+| and_eq  | و_عدل  |
+| asm  | أساس  |
+| auto  | ذاتي  |
+| bitand  | بت_و  |
+| bitor  | بت_أو  |
+| bool  | بول  |
+| break  | أكسر , أكسري  |
+| case  | حالة  |
+| catch  | ألقط  |
+| char  | رمز  |
+| char16_t  | رمز١٦_ن  |
 ## Built With
 * [Flex](https://github.com/westes/flex) - For Lexer generation
 
