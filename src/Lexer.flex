@@ -27,11 +27,12 @@ DIAC+       {/* ignore diacritics */}
 ٩           {ss << "9";}
 [\]\[\{\}]    {ss << std::string(text());}
 محاذ        {;}
+ذاتي        {ss << "auto";}
 و           {ss << "and";}
 و_عدل       {ss << "and_eq";}
 أساس        {ss << "asm";}
-بت_و        {ss << "bit_and";}
-بت_أو       {ss << "bit_or";}
+بت_و        {ss << "bitand";}
+بت_أو       {ss << "bitor";}
 بول         {ss << "bool";}
 أكسر        |
 أكسري       {ss << "break";}
@@ -73,7 +74,6 @@ DIAC+       {/* ignore diacritics */}
 نفي           {ss << "not";}
 نفي_عدل       {;}
 مؤثر_ملغي     {;}
-ذاتي        {ss << "auto";}
 حاذى_ك      {ss << "alignas";}
 صحيص        {ss << "int";}
 أعد         {ss << "return";}
@@ -85,6 +85,7 @@ DIAC+       {/* ignore diacritics */}
 LETTERS+    {ss << std::string(text());}
 LATIN+      {ss << std::string(text());}
 [\n\t ]     {ss << std::string(text());}
+[|\\/'"!#~<>?@:;-_+=()*&^%.,]   {ss << std::string(text());}
 
 
 %%

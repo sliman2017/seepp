@@ -33,10 +33,83 @@ All Arabic letters are encoded to English, while C++ allows for Arabic character
 | bitor  | بت_أو  |
 | bool  | بول  |
 | break  | أكسر , أكسري  |
-| case  | حالة  |
+| case  | حالة  |  
 | catch  | ألقط  |
 | char  | رمز  |
-| char16_t  | رمز١٦_ن  |
+| char16_t  |  رمز١٦_ن , رمز١٦ـن , رمز16_ن , رمز16ـن |
+| char32_t  |  رمز٣٢_ن , رمز٣٢ـن , رمز32_ن , رمز32ـن |
+| class  | صنف  |
+| coml  | متمم  |
+| const  | ثابت  |
+| constexpr  | عبارة_ثابتت  |
+| const_cast  | تحويل_ثابت  |
+| continue  | أكمل  |
+| decltype  | أعلن_نوع  |
+| default  | مبدئي  |
+| delete  | أشطب  |
+| do  | افعل  |
+| double  | ضعف  |  
+| dynamic_cast  | تحويل_ديناميكي |
+| else  |  إلا , الا  |
+| enum  | تعداد  |
+| explicit  | صريح  |
+| extern  | خارجي  |
+| false  | خطأ  |
+| final  | أخير , أخيرة  |
+| float  | متحرك  |
+| for  | ل  |
+| friend  | صديق , صديقة  |
+| goto  | اذهب_الى  |
+| if  | اذا , إذا  |
+| inline  | اضمن  |
+| int  | صحيح  |  
+| long  | كبير  |
+| mutable  | متغير  |
+| namespace  | نطاق  |
+| new  | جديد , جديدة  |
+| noexcept  | لا_استثناء  |
+| not  | نفي  |
+| not_eq  | نفي_عدل  |
+| nullptr  | مؤثر_ملغي  |
+| NULL | ملغى |
+| operator  | مؤثر  |
+| or  | أو , او  |
+| or_eq  | أو_عدل , او_عدل  |
+| override  | اسبقية  |
+| private  | سري , سرّي |
+| protected  | محمي , محمية  |  
+| public  | علني  |
+| reinterpret_cast  | طغى_التحويل  |
+| return  | أعد , اعد  |
+| short  | صغير  |  
+| signed  | ثنائي  |
+| sizeof  | حجم  |
+| static  | ثابت , ثابتة  |
+| static_assert  | تأكيد_ثابت  |
+| static_cast  | تحويل_ثابت  |
+| struct  | بنية  |
+| switch  | أساس  |
+| template  | تطابق  |
+| this  | هذا , هذه  |
+| thread_local  | خيط_فرعي  |
+| throw  | أرمي , ارمي  |
+| true  | صواب  |
+| try  | حاول , حاولي  |  
+| typedef  | حدد_نوع  |
+| typeid  | عرف_نوع , عرّف_نوع  |
+| typename  | اسم_نوع  |
+| union  | اتحاد |
+| unsigned  | مطلق  |
+| using  | استعمال  |
+| virtual  | افتراضي  |
+| void  | غائب  |
+| volatile  | خطر  |
+| wchar_t  | رمز_ع_ن , رمزـعـن  |
+| while  | أكسر , أكسري  |
+| xor  | أوـح , أو_ح  |  
+| xor_eq  | أو_ح_عدل ,  أوـح_عدل |
+
+
 ## Built With
 * [Flex](https://github.com/westes/flex) - For Lexer generation
 
