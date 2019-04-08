@@ -26,60 +26,129 @@ DIAC+       {/* ignore diacritics */}
 ٨           {ss << "8";}
 ٩           {ss << "9";}
 [\]\[\{\}]    {ss << std::string(text());}
-محاذ        {;}
-ذاتي        {ss << "auto";}
+حاذى_ك      {ss << "alignas";}
+محاذ        {ss << "alignof";}
 و           {ss << "and";}
-و_عدل       {ss << "and_eq";}
+و_حدث       {ss << "and_eq";}
 أساس        {ss << "asm";}
+ذاتي        {ss << "auto";}
 بت_و        {ss << "bitand";}
+بت_او       |
 بت_أو       {ss << "bitor";}
 بول         {ss << "bool";}
 أكسر        |
+اكسر        |
+اكسري       |
 أكسري       {ss << "break";}
 حالة        {ss << "case";}
 ألقط        {ss << "catch";}
 رمز         {ss << "char";}
+رمز١٦_ن     |
+رمز١٦ـن     |
 رمز16_ن     |
-رمز١٦_ن     {ss << "char16_t";}
+رمز16ـن     {ss << "char16_t";}
+رمز٣٢_ن     |
+رمز٣٢ـن     |
 رمز32_ن     |
-رمز٣٢_ن     {ss << "char32_t";}
-صنف         {;}
-متمم        {;}
-ثابت        {ss << "const";}
-عبارة_ثابتت   {;}
-تحويل_ثابت    {;}
-أكمل          {;}
-أعلن_نوع      {;}
-افتراضي     {ss << "default";}
-أشطب        {ss << "delete";}
-افعل        {ss << "do";}
-ضعف         {ss << "double";}
-إلا             |
-الا             {;}
-تعداد         {;}
-صريح          {ss << "explicit";}
+رمز32ـن     {ss << "char32_t";}
+صنف         {ss << "class";}
+متمم        {ss << "compl";}
+دائم          {ss << "const";}
+عبارة_ثابتت   {ss << "constexpr";}
+تحويل_دائم    {ss << "const_cast";}
+أكمل          {ss << "continue";}
+أعلن_نوع      {ss << "decltype";}
+مبدئي         {ss << "default";}
+اشطب          |
+أشطب          {ss << "delete";}
+افعل          {ss << "do";}
+ضعف           {ss << "double";}
+إلا            |
+الا            {ss << "else";}
+تعداد         {ss << "enum";}
+محدد          {ss << "explicit";}
 أصدر          {;}
 خارجي         {ss << "extern";}
 خطأ           {ss << "false";}
-متحرك         {;}
+أخير          |
+أخيرة         {ss << "final";}
+متحرك         {ss << "float";}
 ل             {ss << "for";}
 صديق          |
 صديقة         {ss << "friend";}
+اذهب_الى      {ss << "goto";}
 اذا           |
 إذا           {ss << "if";}
+ضم            {ss << "inline";}
+صحيص          {ss << "int";}
 كبير          {ss << "long";}
-متغير         {;}
+متغير         {ss << "mutable";}
 نطاق          {ss << "namespace";}
+جديدة         |
 جديد          {ss << "new";}
+لا_استثناء     {ss << "noexcept";}
 نفي           {ss << "not";}
-نفي_عدل       {;}
-مؤثر_ملغي     {;}
-حاذى_ك      {ss << "alignas";}
-صحيص        {ss << "int";}
-أعد         {ss << "return";}
-حاول        {ss << "try";}
+نفي_حدث       {ss << "not_eq";}
+مؤشر_صفري     {ss << "nullptr";}
+صفري          {ss << "NULL";}
+عامل          {ss << "operator";}
+أو            |
+او            {ss << "or";}
+أو_حدث        |
+او_حدث        {ss << "or_eq";}
+اسبق          {ss << "override";}
+سري           |
+سرّي           {ss << "private";}
+محمي          |
+محمية         {ss << "protected";}
+علني          {ss << "public";}
+طغى_التحويل   {ss << "reinterpret_cast";}
+اعد            |
+أعد            {ss << "return";}
+صغير            {ss << "short";}
+ثنائي          {ss << "signed";}
+حجم            {ss << "sizeof";}
+ثابت            |
+ثابتة           {ss << "static";}
+تأكيد_ثابت     {ss << "static_assert";}
+تحويل_ثابت     {ss << "static_cast";}
+بنية           {ss << "struct";}
+تبديل           {ss << "switch";}
+قالب           {ss << "template";}
+هذا             |
+هذه             {ss << "this";}
+خيط_محلي        {ss << "thread_local";}
+أرمي            |
+ارمي            {ss << "throw";}
+صواب            {ss << "true";}
+حاول            |
+حاولي           {ss << "try";}
+حدد_نوع         {ss << "typedef";}
+عرف_نوع         |
+عرّف_نوع         {ss << "typeid";}
+اسم_نوع         {ss << "typename";}
+اتحاد           {ss << "union";}
+مطلق             {ss << "unsigned";}
+استعمال         {ss << "using";}
+افتراضي          {ss << "virtual";}
+غائب             {ss << "void";}
+متلاش             {ss << "volatile";}
+رمز_ع_ن           |
+رمزـعـن           {ss << "wchar_t";}
+حينما              |
+عندما              |
+لما                {ss << "while";}
+أوـح              |
+أو_ح              |
+اوـح              |
+او_ح              {ss << "xor";}
+أو_ح_حدث          |
+أوـح_حدث          |
+او_ح_حدث          |
+اوـح_حدث          {ss << "xor_eq";}
 رئيسي       {ss << "main";}
 ؛            {ss << ";";}
+،            {ss << ",";}
 ـ           {; /*not an underscore, arabic letter extention to be dumped*/}
 "."+|","+    {ss << std::string(text());}
 LETTERS+    {ss << std::string(text());}

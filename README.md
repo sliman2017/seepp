@@ -26,7 +26,7 @@ All Arabic letters are encoded to English, while C++ allows for Arabic character
 | alignas  | حاذى_ك  |
 | alignof  | محاذ  |
 | and  | و  |
-| and_eq  | و_عدل  |
+| and_eq  | و_حدث  |
 | asm  | أساس  |
 | auto  | ذاتي  |
 | bitand  | بت_و  |
@@ -40,8 +40,8 @@ All Arabic letters are encoded to English, while C++ allows for Arabic character
 | char32_t  |  رمز٣٢_ن , رمز٣٢ـن , رمز32_ن , رمز32ـن |
 | class  | صنف  |
 | coml  | متمم  |
-| const  | ثابت  |
-| constexpr  | عبارة_ثابتت  |
+| const  | دائم  |
+| constexpr  | عبارة_ثابتة  |
 | const_cast  | تحويل_ثابت  |
 | continue  | أكمل  |
 | decltype  | أعلن_نوع  |
@@ -52,7 +52,7 @@ All Arabic letters are encoded to English, while C++ allows for Arabic character
 | dynamic_cast  | تحويل_ديناميكي |
 | else  |  إلا , الا  |
 | enum  | تعداد  |
-| explicit  | صريح  |
+| explicit  | محدد  |
 | extern  | خارجي  |
 | false  | خطأ  |
 | final  | أخير , أخيرة  |
@@ -61,7 +61,7 @@ All Arabic letters are encoded to English, while C++ allows for Arabic character
 | friend  | صديق , صديقة  |
 | goto  | اذهب_الى  |
 | if  | اذا , إذا  |
-| inline  | اضمن  |
+| inline  | ضم  |
 | int  | صحيح  |  
 | long  | كبير  |
 | mutable  | متغير  |
@@ -69,13 +69,13 @@ All Arabic letters are encoded to English, while C++ allows for Arabic character
 | new  | جديد , جديدة  |
 | noexcept  | لا_استثناء  |
 | not  | نفي  |
-| not_eq  | نفي_عدل  |
-| nullptr  | مؤثر_ملغي  |
-| NULL | ملغى |
-| operator  | مؤثر  |
+| not_eq  | نفي_حدث |
+| nullptr  | مؤشر_صفري  |
+| NULL | صفري |
+| operator  | عامل  |
 | or  | أو , او  |
-| or_eq  | أو_عدل , او_عدل  |
-| override  | اسبقية  |
+| or_eq  | أو_حدث , او_حدث  |
+| override  | اسبق  |
 | private  | سري , سرّي |
 | protected  | محمي , محمية  |  
 | public  | علني  |
@@ -88,10 +88,10 @@ All Arabic letters are encoded to English, while C++ allows for Arabic character
 | static_assert  | تأكيد_ثابت  |
 | static_cast  | تحويل_ثابت  |
 | struct  | بنية  |
-| switch  | أساس  |
-| template  | تطابق  |
+| switch  | تبديل  |
+| template  | قالب  |
 | this  | هذا , هذه  |
-| thread_local  | خيط_فرعي  |
+| thread_local  | خيط_محلي  |
 | throw  | أرمي , ارمي  |
 | true  | صواب  |
 | try  | حاول , حاولي  |  
@@ -103,11 +103,11 @@ All Arabic letters are encoded to English, while C++ allows for Arabic character
 | using  | استعمال  |
 | virtual  | افتراضي  |
 | void  | غائب  |
-| volatile  | خطر  |
+| volatile  | متلاش  |
 | wchar_t  | رمز_ع_ن , رمزـعـن  |
 | while  | أكسر , أكسري  |
 | xor  | أوـح , أو_ح  |  
-| xor_eq  | أو_ح_عدل ,  أوـح_عدل |
+| xor_eq  | أو_ح_حدث ,  أوـح_حدث |
 
 
 ## Built With
