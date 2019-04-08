@@ -63,6 +63,7 @@ DIAC+       {/* ignore diacritics */}
 أشطب          {ss << "delete";}
 افعل          {ss << "do";}
 ضعف           {ss << "double";}
+تحويل_ديناميكي  {ss << "dynamic_cast";}
 إلا            |
 الا            {ss << "else";}
 تعداد         {ss << "enum";}
