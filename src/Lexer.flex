@@ -14,7 +14,144 @@ DIAC           [\xd98b-\xd990\xd992\xd993]
 LATIN          [a-zA-Z0-9]
 
 %%
-DIAC+       {/* ignore diacritics */}
+
+تحويل_ديناميكي  {ss << "dynamic_cast";}
+
+عبارة_ثابتت   {ss << "constexpr";}
+طغى_التحويل   {ss << "reinterpret_cast";}
+
+تحويل_دائم    {ss << "const_cast";}
+لا_استثناء     {ss << "noexcept";}
+تأكيد_ثابت     {ss << "static_assert";}
+تحويل_ثابت     {ss << "static_cast";}
+
+مؤشر_صفري     {ss << "nullptr";}
+
+أو_ح_حدث      |
+أوـح_حدث      |
+او_ح_حدث      |
+اوـح_حدث      {ss << "xor_eq";}
+أعلن_نوع      {ss << "decltype";}
+اذهب_الى      {ss << "goto";}
+خيط_محلي        {ss << "thread_local";}
+
+
+رمز١٦_ن     |
+رمز١٦ـن     |
+رمز16_ن     |
+رمز16ـن     {ss << "char16_t";}
+رمز٣٢_ن     |
+رمز٣٢ـن     |
+رمز32_ن     |
+رمز32ـن     {ss << "char32_t";}
+نفي_حدث     {ss << "not_eq";}
+حدد_نوع         {ss << "typedef";}
+عرف_نوع         {ss << "typeid";}
+اسم_نوع         {ss << "typename";}
+استعمال         {ss << "using";}
+افتراضي          {ss << "virtual";}
+رمز_ع_ن           |
+رمزـعـن           {ss << "wchar_t";}
+
+حاذى_ك      {ss << "alignas";}
+أو_حدث      |
+او_حدث      {ss << "or_eq";}
+
+و_حدث       {ss << "and_eq";}
+بت_او       |
+بت_أو       {ss << "bitor";}
+اكسري       |
+أكسري       {ss << "break";}
+مبدئي       {ss << "default";}
+أشطبي       {ss << "delete";}
+تعداد       {ss << "enum";}
+خارجي       {ss << "extern";}
+أخيرة       {ss << "final";}
+متحرك       {ss << "float";}
+صديقة       {ss << "friend";}
+متغير       {ss << "mutable";}
+جديدة       {ss << "new";}
+محمية       {ss << "protected";}
+ثنائي          {ss << "signed";}
+ثابتة           {ss << "static";}
+تبديل           {ss << "switch";}
+حاولي           {ss << "try";}
+اتحاد           {ss << "union";}
+متلاش             {ss << "volatile";}
+حينما              |
+عندما              {ss << "while";}
+رئيسي       {ss << "main";}
+
+محاذ        {ss << "alignof";}
+أساس        {ss << "asm";}
+ذاتي        {ss << "auto";}
+بت_و        {ss << "bitand";}
+أكسر        |
+اكسر        {ss << "break";}
+حالة        {ss << "case";}
+ألقط        {ss << "catch";}
+متمم        {ss << "compl";}
+دائم        {ss << "const";}
+أوـح        |
+أو_ح        |
+اوـح        |
+او_ح        {ss << "xor";}
+أكمل        {ss << "continue";}
+اشطب        {ss << "delete";}
+افعل        {ss << "do";}
+محدد        {ss << "explicit";}
+أخير        {ss << "final";}
+صديق        {ss << "friend";}
+صحيص        {ss << "int";}
+كبير        {ss << "long";}
+نطاق        {ss << "namespace";}
+جديد        {ss << "new";}
+صفري        {ss << "NULL";}
+عامل        {ss << "operator";}
+اسبق        {ss << "override";}
+محمي        {ss << "protected";}
+علني        {ss << "public";}
+صغير        {ss << "short";}
+ثابت            {ss << "static";}
+بنية           {ss << "struct";}
+قالب           {ss << "template";}
+أرمي            |
+ارمي            {ss << "throw";}
+صواب            {ss << "true";}
+حاول            {ss << "try";}
+مطلق             {ss << "unsigned";}
+غائب             {ss << "void";}
+
+
+بول         {ss << "bool";}
+رمز         {ss << "char";}
+صنف         {ss << "class";}
+إلا            |
+الا            {ss << "else";}
+ضعف           {ss << "double";}
+خطأ           {ss << "false";}
+اذا           |
+إذا           {ss << "if";}
+نفي           {ss << "not";}
+سري           {ss << "private";}
+اعد            |
+أعد            {ss << "return";}
+حجم            {ss << "sizeof";}
+هذا             |
+هذه             {ss << "this";}
+لما                {ss << "while";}
+
+
+أو            |
+او            {ss << "or";}
+ضم            {ss << "inline";}
+
+
+و           {ss << "and";}
+ل             {ss << "for";}
+
+[\]\[\{\}]    {ss << std::string(text());}
+
 ٠           {ss << "0";}
 ١           {ss << "1";}
 ٢           {ss << "2";}
@@ -25,136 +162,13 @@ DIAC+       {/* ignore diacritics */}
 ٧           {ss << "7";}
 ٨           {ss << "8";}
 ٩           {ss << "9";}
-[\]\[\{\}]    {ss << std::string(text());}
-حاذى_ك      {ss << "alignas";}
-محاذ        {ss << "alignof";}
-و           {ss << "and";}
-و_حدث       {ss << "and_eq";}
-أساس        {ss << "asm";}
-ذاتي        {ss << "auto";}
-بت_و        {ss << "bitand";}
-بت_او       |
-بت_أو       {ss << "bitor";}
-بول         {ss << "bool";}
-أكسر        |
-اكسر        |
-اكسري       |
-أكسري       {ss << "break";}
-حالة        {ss << "case";}
-ألقط        {ss << "catch";}
-رمز         {ss << "char";}
-رمز١٦_ن     |
-رمز١٦ـن     |
-رمز16_ن     |
-رمز16ـن     {ss << "char16_t";}
-رمز٣٢_ن     |
-رمز٣٢ـن     |
-رمز32_ن     |
-رمز32ـن     {ss << "char32_t";}
-صنف         {ss << "class";}
-متمم        {ss << "compl";}
-دائم          {ss << "const";}
-عبارة_ثابتت   {ss << "constexpr";}
-تحويل_دائم    {ss << "const_cast";}
-أكمل          {ss << "continue";}
-أعلن_نوع      {ss << "decltype";}
-مبدئي         {ss << "default";}
-اشطب          |
-أشطب          {ss << "delete";}
-افعل          {ss << "do";}
-ضعف           {ss << "double";}
-تحويل_ديناميكي  {ss << "dynamic_cast";}
-إلا            |
-الا            {ss << "else";}
-تعداد         {ss << "enum";}
-محدد          {ss << "explicit";}
-أصدر          {;}
-خارجي         {ss << "extern";}
-خطأ           {ss << "false";}
-أخير          |
-أخيرة         {ss << "final";}
-متحرك         {ss << "float";}
-ل             {ss << "for";}
-صديق          |
-صديقة         {ss << "friend";}
-اذهب_الى      {ss << "goto";}
-اذا           |
-إذا           {ss << "if";}
-ضم            {ss << "inline";}
-صحيص          {ss << "int";}
-كبير          {ss << "long";}
-متغير         {ss << "mutable";}
-نطاق          {ss << "namespace";}
-جديدة         |
-جديد          {ss << "new";}
-لا_استثناء     {ss << "noexcept";}
-نفي           {ss << "not";}
-نفي_حدث       {ss << "not_eq";}
-مؤشر_صفري     {ss << "nullptr";}
-صفري          {ss << "NULL";}
-عامل          {ss << "operator";}
-أو            |
-او            {ss << "or";}
-أو_حدث        |
-او_حدث        {ss << "or_eq";}
-اسبق          {ss << "override";}
-سري           |
-سرّي           {ss << "private";}
-محمي          |
-محمية         {ss << "protected";}
-علني          {ss << "public";}
-طغى_التحويل   {ss << "reinterpret_cast";}
-اعد            |
-أعد            {ss << "return";}
-صغير            {ss << "short";}
-ثنائي          {ss << "signed";}
-حجم            {ss << "sizeof";}
-ثابت            |
-ثابتة           {ss << "static";}
-تأكيد_ثابت     {ss << "static_assert";}
-تحويل_ثابت     {ss << "static_cast";}
-بنية           {ss << "struct";}
-تبديل           {ss << "switch";}
-قالب           {ss << "template";}
-هذا             |
-هذه             {ss << "this";}
-خيط_محلي        {ss << "thread_local";}
-أرمي            |
-ارمي            {ss << "throw";}
-صواب            {ss << "true";}
-حاول            |
-حاولي           {ss << "try";}
-حدد_نوع         {ss << "typedef";}
-عرف_نوع         |
-عرّف_نوع         {ss << "typeid";}
-اسم_نوع         {ss << "typename";}
-اتحاد           {ss << "union";}
-مطلق             {ss << "unsigned";}
-استعمال         {ss << "using";}
-افتراضي          {ss << "virtual";}
-غائب             {ss << "void";}
-متلاش             {ss << "volatile";}
-رمز_ع_ن           |
-رمزـعـن           {ss << "wchar_t";}
-حينما              |
-عندما              |
-لما                {ss << "while";}
-أوـح              |
-أو_ح              |
-اوـح              |
-او_ح              {ss << "xor";}
-أو_ح_حدث          |
-أوـح_حدث          |
-او_ح_حدث          |
-اوـح_حدث          {ss << "xor_eq";}
-رئيسي       {ss << "main";}
 ؛            {ss << ";";}
 ،            {ss << ",";}
-ـ           {; /*not an underscore, arabic letter extention to be dumped*/}
+
 "."+|","+    {ss << std::string(text());}
-LETTERS+    {ss << std::string(text());}
-LATIN+      {ss << std::string(text());}
-[\n\t ]     {ss << std::string(text());}
+\p{IsArabicExtended-A}     {ss << *text();}
+{LATIN}+      {ss << *text();}
+[[ \t\n\v\f\r]      {ss << *text();}
 [|\\/'"!#~<>?@:;-_+=()*&^%.,]   {ss << std::string(text());}
 
 
