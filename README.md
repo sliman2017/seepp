@@ -108,14 +108,36 @@ All Arabic letters are encoded to English, while C++ allows for Arabic character
 | xor  | أوـح , أو_ح  |  
 | xor_eq  | أو_ح_حدث ,  أوـح_حدث |
 
-Eastern Arabic numerals will be supported soon. 
+Eastern Arabic numerals will be supported soon.
+
+## How do I try seep?
+
+All the filed needed are in the repository. To compile the lexer use the command:
+
+```
+clang ./src/reflex/output.o ./src/reflex/input.o ./src/reflex/pattern.o ./src/reflex/error.o lex.yy.cpp -o seep
+
+```
+And run the program with a file with extension .spp :
+
+e.g.:
+
+```
+seep example.spp
+
+```
+
+and a file with the same file name with extension .cpp will be output.
 
 ## Built With
 * [RE-flex](https://github.com/Genivia/RE-flex) - For Lexer generation
 
+
 ## Contributing
 If you are interesting in contributing, email me at ``` mashini.suleiman@gmail.com ```
 
+## Note
+This is a very early version of the lexer, improvements will come and I will make installation and running more robust in the near future.
 
 ## License
 This project is licensed under the BSD-3 License - see the [LICENSE.md](LICENSE.md) file for details.

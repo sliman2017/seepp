@@ -181,12 +181,25 @@ int main(int argc, char **argv)
   FILE *fd = stdin;
   if (argc > 1 && (fd = fopen(argv[1], "r")) == NULL)
     exit(EXIT_FAILURE);
+
+
+  std::string fileName = argv[1];
+
+  if(fileName.substr(fileName.find_last_of(".") + 1) != "spp") {
+    std::cerr << "Invalid File Extention";
+    exit(EXIT_FAILURE);
+  }
+
   std::locale::global(std::locale(""));
   std::wofstream of;
   Lexer(fd).lex();
   std::wstring wstr = ss.str();
-  std::wcout << wstr;
-  of.open("output.txt",std::ios::out|std::ios::trunc|std::ios::binary);
+
+  std::size_t lastindex = fileName.find_last_of(".");
+  std::string rawname = fileName.substr(0, lastindex);
+  rawname += ".cpp";
+
+  of.open(rawname ,std::ios::out|std::ios::trunc|std::ios::binary);
   of << wstr;
   of.close();
   return 0;
