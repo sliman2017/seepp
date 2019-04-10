@@ -123,8 +123,7 @@ And run the program with a file with extension .spp :
 e.g.:
 
 ```
-seep example.spp
-
+./seep example.spp
 ```
 
 and a file with the same file name with extension .cpp will be output.
