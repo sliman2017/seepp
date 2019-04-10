@@ -2,7 +2,6 @@
 # س++ لغة برمجة عربية مستعارة
 Is a pseudo-language syntactically identical to C++/11  based on Arabic script and language. The implenmentation relies on using the GNU compiler and directly lexically translates س++ source code to valid C++/11 code .
 
-هي لغة مطابقة الى سسس كبنية على الأحرف و اللغة العربية.
 ## Motivation
 
 ### Why Develop an Arabic Programming Language?
@@ -15,7 +14,7 @@ Regardless of whether a language is elegant or not, a language's success depends
 
 ### Why is your README.md in English? (oh the irony)
 
-My Arabic isn't that great, I'm will look for someone to help me in the translation of the README once I have a working implementation done.
+I will be posting the Arabic translations in a few days.
 
 ## Implementation
 All Arabic letters are encoded to English, while C++ allows for Arabic characters to be used in identifiers, forcing all characters to English will allow for less ambiguity, and allow for robustness.
