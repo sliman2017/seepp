@@ -120,7 +120,7 @@ clang ./src/reflex/output.o ./src/reflex/input.o ./src/reflex/pattern.o ./src/re
 ```
 And run the program with a file with extension .spp :
 
-e.g.:
+e.g:
 
 ```
 ./seep example.spp
