@@ -22,68 +22,68 @@ All Arabic letters are encoded to English, while C++ allows for Arabic character
 ## Valid Keywords
 | C++11 Keyword  | س++ Equivalent(s) |
 | ------------- | ------------- |
-| alignas  | حاذى_ك  |
-| alignof  | محاذ  |
-| and  | و  |
-| and_eq  | و_حدث  |
-| asm  | أساس  |
-| auto  | ذاتي  |
-| bitand  | بت_و  |
-| bitor  | بت_أو  |
-| bool  | بول  |
-| break  | أكسر , أكسري  |
+| alignas  | محاذيا_ك  |
+| alignof  | حاذه |
+| and  |  و ، ضرب  |
+| and_eq  | و_تحدث ، ضرب_تحديث |
+| asm  | تجميع |
+| auto  | ذاتي ، تلقائي |
+| bitand  | بت_و ، ضرب_بت|
+| bitor  | بت_او ، بت_أو ، جمع_بت|
+| bool  | بول ، بوليان |
+| break  | انكسار ، إنكسار |
 | case  | حالة  |  
-| catch  | ألقط  |
-| char  | رمز  |
+| catch  | ألقط ، القط  |
+| char  | رمز |
 | char16_t  |  رمز١٦_ن , رمز١٦ـن , رمز16_ن , رمز16ـن |
 | char32_t  |  رمز٣٢_ن , رمز٣٢ـن , رمز32_ن , رمز32ـن |
-| class  | صنف  |
+| class  | صنف |
 | coml  | متمم  |
-| const  | دائم  |
+| const  | ثابت |
 | constexpr  | عبارة_ثابتة  |
 | const_cast  | تحويل_ثابت  |
-| continue  | أكمل  |
-| decltype  | أعلن_نوع  |
+| continue  | استمر  |
+| decltype  | أعلن_نوع ، اعلن_نوع |
 | default  | مبدئي  |
-| delete  | أشطب  |
+| delete  | حذث |
 | do  | افعل  |
-| double  | ضعف  |  
+| double  | مزدوج |  
 | dynamic_cast  | تحويل_ديناميكي |
 | else  |  إلا , الا  |
-| enum  | تعداد  |
+| enum  | عد |
 | explicit  | محدد  |
 | extern  | خارجي  |
 | false  | خطأ  |
-| final  | أخير , أخيرة  |
+| final  | نهائي  |
 | float  | متحرك  |
 | for  | ل  |
-| friend  | صديق , صديقة  |
-| goto  | اذهب_الى  |
+| friend  | صديق |
+| goto  | اذهب_الى ، اذهب_إلى ، إذهب_إلى ، إذهب_الى  |
 | if  | اذا , إذا  |
 | inline  | ضم  |
-| int  | صحيح  |  
-| long  | كبير  |
+| int  | صحيح |  
+| long  | طويل |
 | mutable  | متغير  |
 | namespace  | نطاق  |
-| new  | جديد , جديدة  |
-| noexcept  | لا_استثناء  |
+| new  | جديد |
+| noexcept  | لا_استثناء ، لا_إستثناء|
 | not  | نفي  |
-| not_eq  | نفي_حدث |
+| not_eq  | نفي_حدث ، نفي_تحديث |
 | nullptr  | مؤشر_صفري  |
 | NULL | صفري |
 | operator  | عامل  |
-| or  | أو , او  |
-| or_eq  | أو_حدث , او_حدث  |
-| override  | اسبق  |
-| private  | سري , سرّي |
-| protected  | محمي , محمية  |  
-| public  | علني  |
-| reinterpret_cast  | طغى_التحويل  |
-| return  | أعد , اعد  |
-| short  | صغير  |  
-| signed  | ثنائي  |
+| or  | أو , او ، جمع |
+| or_eq  | او_تحديث ، أو_تحديث ، جمع_تحديث|
+| override  | تجاوز |
+| private  | خاص |
+| protected  | محمي |  
+| public  | عمومي |
+| reinterpret_cast  | تحويل_المؤشر |
+| return  | أعد , اعد ، عودة |
+| short  | قصير |  
+| signed  | ذو_اشارة ، ذو_إشارة  |
 | sizeof  | حجم  |
-| static  | ثابت , ثابتة  |
+| static  | استاتيكي|
 | static_assert  | تأكيد_ثابت  |
 | static_cast  | تحويل_ثابت  |
 | struct  | بنية  |
@@ -93,9 +93,9 @@ All Arabic letters are encoded to English, while C++ allows for Arabic character
 | thread_local  | خيط_محلي  |
 | throw  | أرمي , ارمي  |
 | true  | صواب  |
-| try  | حاول , حاولي  |  
-| typedef  | حدد_نوع  |
-| typeid  | عرف_نوع , عرّف_نوع  |
+| try  | حاول |  
+| typedef  | تحديد_نوع  |
+| typeid  | تعريف_نوع |
 | typename  | اسم_نوع  |
 | union  | اتحاد |
 | unsigned  | مطلق  |
@@ -104,9 +104,9 @@ All Arabic letters are encoded to English, while C++ allows for Arabic character
 | void  | غائب  |
 | volatile  | متلاش  |
 | wchar_t  | رمز_ع_ن , رمزـعـن  |
-| while  | أكسر , أكسري  |
-| xor  | أوـح , أو_ح  |  
-| xor_eq  | أو_ح_حدث ,  أوـح_حدث |
+| while  | في_أثناء ، في_اثناء ، عندما |
+| xor  | أوـح , او_ح ، جمع_م |  
+| xor_eq  | أو_ح_تحديث ,  أوـح_تحديث ، جمع_م_تحديث|
 
 Eastern Arabic numerals will be supported soon.
 
