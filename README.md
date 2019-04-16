@@ -115,7 +115,7 @@ Eastern Arabic numerals will be supported soon.
 All the filed needed are in the repository. To compile the lexer use the command:
 
 ```
-clang ./src/reflex/output.o ./src/reflex/input.o ./src/reflex/pattern.o ./src/reflex/error.o lex.yy.cpp -o seep
+clang ./src/reflex/matcher.o ./src/reflex/input.o ./src/reflex/pattern.o ./src/reflex/error.o lex.yy.cpp -o seep
 
 ```
 And run the program with a file with extension .spp :
