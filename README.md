@@ -68,7 +68,7 @@ All Arabic letters are encoded to English, while C++ allows for Arabic character
 | new  | جديد |
 | noexcept  | لا_استثناء ، لا_إستثناء|
 | not  | نفي  |
-| not_eq  | نفي_حدث ، نفي_تحديث |
+| not_eq  | نفي_تحديث |
 | nullptr  | مؤشر_صفري  |
 | NULL | صفري |
 | operator  | عامل  |
