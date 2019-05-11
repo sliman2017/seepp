@@ -9,143 +9,174 @@ std::wstringstream ss;
 
 %}
 
-LETTERS        [\xd8a1-\xd98a\xd991]
+ARABIC         [\xd8a1-\xd98a\xd991]
 DIAC           [\xd98b-\xd990\xd992\xd993]
 LATIN          [a-zA-Z0-9]
-ARABIC         [\u{0621}-\u{063A}\u{0640}-\u{064A}_]+
 %%
-أو_ح_تحديث/{ARABIC}             |
-أوـح_تحديث/{ARABIC}             |
-جمع_م_تحديث/{ARABIC}            {ss << L"xor_eq";}
-أوـح/{ARABIC}                   |
-او_ح/{ARABIC}                   |
-جمع_م/{ARABIC}                  {ss << L"xor";}
-لا_استثناء/{ARABIC}           |
-لا_إستثناء/{ARABIC}           {ss << L"noexcept";}
-محاذيا_ك/{ARABIC}       {ss << L"alignas";}
-حاذه/{ARABIC}           {ss << L"alignof";}
-و_تحدث/{ARABIC}          |
-ضرب_تحديث/{ARABIC}        {ss << L"and_eq";}
-تجميع/{ARABIC}           {ss << L"asm";}
-ذاتي/{ARABIC}             |
-تلقائ/{ARABIC}            {ss << L"auto";}
-بت_و/{ARABIC}             |
-ضرب_بت/{ARABIC}           {ss << L"bitand";}
 
-بت_او/{ARABIC}            |
-بت_أو/{ARABIC}            |
-جمع_بت/{ARABIC}           {ss << L"bitor";}
-بوليا/{ARABIC}            {ss << L"bool";}
-بول/{ARABIC}              |
-انكسار/{ARABIC}           |
-إنكسار/{ARABIC}           {ss << L"break";}
-حالة/{ARABIC}             {ss << L"case";}
-ألقط/{ARABIC}             |
-القط/{ARABIC}             {ss << L"catch";}
-رمز_ع_ن/{ARABIC}                |
-رمزـعـن/{ARABIC}                {ss << L"wchar_t";}
-رمز/{ARABIC}              {ss << L"char";}
-رمز١٦_ن/{ARABIC}          |
-رمز١٦ـن/{ARABIC}          |
-رمز16_ن/{ARABIC}          |
-رمز16ـن/{ARABIC}          {ss << L"char16_t";}
-رمز٣٢_ن/{ARABIC}          |
-رمز٣٢ـن/{ARABIC}          |
-رمز32_ن/{ARABIC}          |
-رمز32ـن/{ARABIC}          {ss << L"char32_t";}
-صنف/{ARABIC}              {ss << L"class";}
-متمم/{ARABIC}             {ss << L"coml";}
-ثابت/{ARABIC}             {ss << L"const";}
-عبارة_ثابتة/{ARABIC}      {ss << L"constexpr";}
-تحويل_الثابت/{ARABIC}       {ss << L"const_cast";}
-استمر/{ARABIC}            {ss << L"continue";}
-أعلن_نوع/{ARABIC}         |
-اعلن_نوع/{ARABIC}          {ss << L"decltype";}
-مبدئي/{ARABIC}             {ss << L"default";}
-حذث/{ARABIC}               {ss << L"delete";}
-افعل/{ARABIC}              {ss << L"do";}
-مزدوج/{ARABIC}             {ss << L"double";}
-تحويل_ديناميكي/{ARABIC}    {ss << L"dynamic_cast";}
-إلا/{ARABIC}                 |
-الا/{ARABIC}                 {ss << L"else";}
-عد/{ARABIC}                 {ss << L"enum";}
-محدد/{ARABIC}               {ss << L"explicit";}
-خارجي/{ARABIC}              {ss << L"extern";}
-خطأ/{ARABIC}                {ss << L"false";}
-نهائي/{ARABIC}              {ss << L"final";}
-متحرك/{ARABIC}              {ss << L"float";}
-ل/{ARABIC}                   {ss << L"for";}
-صديق/{ARABIC}               {ss << L"friend";}
-اذهب_الى/{ARABIC}           |
-اذهب_إلى/{ARABIC}           |
-إذهب_إلى/{ARABIC}           |
-إذهب_الى/{ARABIC}           {ss << L"goto";}
-اذا/{ARABIC}                |
-إذا/{ARABIC}                {ss << L"if";}
-ضم/{ARABIC}                 {ss << L"inline";}
-صحيح/{ARABIC}               {ss << L"int";}
-طويل/{ARABIC}               {ss << L"long";}
-متغير/{ARABIC}              {ss << L"mutable";}
-نطاق/{ARABIC}               {ss << L"namespace";}
-جديد/{ARABIC}               {ss << L"new";}
-نفي_تحديث/{ARABIC}          {ss << L"not_eq";}
+[_{ARABIC}]{14,}    {/* identifier */ ss << wstr();}
 
-نفي/{ARABIC}                {ss << L"not";}
-مؤشر_صفري/{ARABIC}          {ss << L"nullptr";}
-صفري/{ARABIC}               {ss << L"NULL";}
-عامل/{ARABIC}                {ss << L"opterator";}
+تحويل_ديناميكي    {ss << L"dynamic_cast";}
 
-او_تحديث/{ARABIC}             |
-أو_تحديث/{ARABIC}             |
-جمع_تحديث/{ARABIC}            {ss << L"or_eq";}
-أو/{ARABIC}                   |
-او/{ARABIC}                   |
-جمع/{ARABIC}                  {ss << L"or";}
-تجاوز/{ARABIC}                {ss << L"override";}
-خاص/{ARABIC}                  {ss << L"private";}
-محمي/{ARABIC}                 {ss << L"protected";}
-عمومي/{ARABIC}                {ss << L"public";}
-تحويل_المؤشر/{ARABIC}         {ss << L"reinterpret_cast";}
-أعد/{ARABIC}                   |
-اعد/{ARABIC}                   |
-عودة/{ARABIC}                  {ss << L"return";}
-قصير/{ARABIC}                  {ss << L"short";}
-ذو_اشارة/{ARABIC}              |
-ذو_إشارة/{ARABIC}              {ss << L"signed";}
-حجم/{ARABIC}                    {ss << L"sizeof";}
-استاتيكي/{ARABIC}              {ss << L"static";}
-تأكيد_ثابت/{ARABIC}            {ss << L"static_assert";}
-تحويل_ثابت/{ARABIC}            {ss << L"static_cast";}
-بنية/{ARABIC}                   {ss << L"struct";}
-تبديل/{ARABIC}                  {ss << L"switch";}
-قالب/{ARABIC}                   {ss << L"template";}
-هذا/{ARABIC}                    |
-هذه/{ARABIC}                    {ss << L"this";}
-خيط_محلي/{ARABIC}               {ss << L"thread_local";}
-أرمي/{ARABIC}                   |
-ارمي/{ARABIC}                   {ss << L"throw";}
-صواب/{ARABIC}                   {ss << L"true";}
-حاول/{ARABIC}                   {ss << L"try";}
-تحديد_نوع/{ARABIC}              {ss << L"typedef";}
-تعريف_نوع/{ARABIC}              {ss << L"typeid";}
-اسم_نوع/{ARABIC}                {ss << L"typename";}
-اتحاد/{ARABIC}                  {ss << L"union";}
-مطلق/{ARABIC}                   {ss << L"unsigned";}
-استعمال/{ARABIC}                {ss << L"using";}
-افتراض/{ARABIC}                 {ss << L"virtual";}
-غائب/{ARABIC}                    {ss << L"void";}
-متلاش/{ARABIC}                   {ss << L"volatile";}
+[_{ARABIC}]{13,14}    {/* identifier */ ss << wstr();}
 
-في_أثناء/{ARABIC}               |
-في_اثناء/{ARABIC}               |
-عندما/{ARABIC}                  {ss << L"while";}
+تحويل_المؤشر         {ss << L"reinterpret_cast";}
+تحويل_الثابت       {ss << L"const_cast";}
 
+[_{ARABIC}]{12}    {/* identifier */ ss << wstr();}
 
-و/{ARABIC}               {ss << L"and";}
-ضرب/{ARABIC}             {ss << L"and";}
+جمع_م_تحديث            {ss << L"xor_eq";}
+عبارة_ثابتة           {ss << L"constexpr";}
 
-[_{ARABIC}][_{ARABIC}]*     {/* identifier */ ss << wstr();}
+[_{ARABIC}]{11}    {/* identifier */ ss << wstr();}
 
+تحويل_ثابت            {ss << L"static_cast";}
+تأكيد_ثابت            {ss << L"static_assert";}
+أو_ح_تحديث             |
+أوـح_تحديث             {ss << L"xor_eq";}
+لا_استثناء              |
+لا_إستثناء             {ss << L"noexcept";}
+
+[_{ARABIC}]{10}    {/* identifier */ ss << wstr();}
+
+تعريف_نوع              {ss << L"typeid";}
+تحديد_نوع              {ss << L"typedef";}
+جمع_تحديث            {ss << L"or_eq";}
+مؤشر_صفري          {ss << L"nullptr";}
+نفي_تحديث          {ss << L"not_eq";}
+ضرب_تحديث        {ss << L"and_eq";}
+
+[_{ARABIC}]{9}    {/* identifier */ ss << wstr();}
+
+في_أثناء               |
+في_اثناء               {ss << L"while";}
+خيط_محلي               {ss << L"thread_local";}
+استاتيكي              {ss << L"static";}
+ذو_اشارة              |
+ذو_إشارة              {ss << L"signed";}
+او_تحديث             |
+أو_تحديث             {ss << L"or_eq";}
+اذهب_الى            |
+اذهب_إلى            |
+إذهب_إلى            |
+إذهب_الى             {ss << L"goto";}
+أعلن_نوع         |
+اعلن_نوع          {ss << L"decltype";}
+محاذيا_ك       {ss << L"alignas";}
+
+[_{ARABIC}]{8}    {/* identifier */ ss << wstr();}
+
+استعمال                {ss << L"using";}
+اسم_نوع                {ss << L"typename";}
+رمز٣٢_ن                  |
+رمز٣٢ـن                  |
+رمز32_ن                  |
+رمز32ـن                  {ss << L"char32_t";}
+رمز١٦_ن                 |
+رمز١٦ـن                 |
+رمز16_ن                 |
+رمز16ـن                  {ss << L"char16_t";}
+رمز_ع_ن                |
+رمزـعـن                {ss << L"wchar_t";}
+
+[_{ARABIC}]{7}    {/* identifier */ ss << wstr();}
+
+افتراض                 {ss << L"virtual";}
+انكسار                  |
+إنكسار                  {ss << L"break";}
+بوليان                  {ss << L"bool";}
+جمع_بت                 {ss << L"bitor";}
+و_تحدث                 {ss << L"and_eq";}
+ضرب_بت                 {ss << L"bitand";}
+
+[_{ARABIC}]{6}    {/* identifier */ ss << wstr();}
+
+عندما                  {ss << L"while";}
+متلاش                   {ss << L"volatile";}
+اتحاد                  {ss << L"union";}
+حاول                   {ss << L"try";}
+قالب                   {ss << L"template";}
+تبديل                  {ss << L"switch";}
+عمومي                  {ss << L"public";}
+تجاوز                  {ss << L"override";}
+متغير                  {ss << L"mutable";}
+نهائي                   {ss << L"final";}
+متحرك                   {ss << L"float";}
+خارجي                  {ss << L"extern";}
+مزدوج                  {ss << L"double";}
+مبدئي                  {ss << L"default";}
+استمر                  {ss << L"continue";}
+بت_او                   |
+بت_أو                   {ss << L"bitor";}
+جمع_م                  {ss << L"xor";}
+تلقائ                 {ss << L"auto";}
+تجميع                  {ss << L"asm";}
+
+[_{ARABIC}]{5}    {/* identifier */ ss << wstr();}
+
+أرمي                   |
+ارمي                   {ss << L"throw";}
+مطلق                   {ss << L"unsigned";}
+أوـح                   |
+او_ح                   {ss << L"xor";}
+غائب                    {ss << L"void";}
+صواب                   {ss << L"true";}
+بنية                   {ss << L"struct";}
+عودة                  {ss << L"return";}
+قصير                  {ss << L"short";}
+محمي                 {ss << L"protected";}
+صفري                {ss << L"NULL";}
+عامل                {ss << L"opterator";}
+نطاق                {ss << L"namespace";}
+جديد                {ss << L"new";}
+صحيح                 {ss << L"int";}
+طويل                {ss << L"long";}
+صديق                {ss << L"friend";}
+محدد                {ss << L"explicit";}
+افعل                {ss << L"do";}
+متمم                 {ss << L"coml";}
+ثابت                 {ss << L"const";}
+ألقط                 |
+القط                 {ss << L"catch";}
+حالة                {ss << L"case";}
+حاذه                {ss << L"alignof";}
+ذاتي                {ss << L"auto";}
+بت_و                {ss << L"bitand";}
+
+[_{ARABIC}]{4}    {/* identifier */ ss << wstr();}
+
+ضرب                   {ss << L"and";}
+هذا                    |
+هذه                    {ss << L"this";}
+حجم                    {ss << L"sizeof";}
+أعد                   |
+اعد                   {ss << L"return";}
+خاص                  {ss << L"private";}
+جمع                  {ss << L"or";}
+نفي                 {ss << L"not";}
+اذا                 |
+إذا                 {ss << L"if";}
+بول                 {ss << L"bool";}
+خطأ                  {ss << L"false";}
+إلا                   |
+الا                  {ss << L"else";}
+عد                  {ss << L"enum";}
+حذث                 {ss << L"delete";}
+رمز                 {ss << L"char";}
+صنف                 {ss << L"class";}
+
+[_{ARABIC}]{3}    {/* identifier */ ss << wstr();}
+
+أو                   |
+او                   {ss << L"or";}
+ضم                   {ss << L"inline";}
+
+[_{ARABIC}]{2}    {/* identifier */ ss << wstr();}
+
+و                    {ss << L"and";}
+ل                     {ss << L"for";}
+
+[_{ARABIC}]          {/* identifier */ ss << wstr();}
 
 ؛                    {ss << L";";}
 ،                    {ss << L",";}
